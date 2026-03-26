@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LinkedDB.TestProject/LinkedDB.TestProject.csproj" Id="43e23707-6df1-48e9-9fb0-cfaa8279086c" />
+  <Project Path="LinkedInDB/LinkedInDB.csproj" />
+</Solution>
