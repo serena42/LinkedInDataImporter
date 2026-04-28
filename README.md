@@ -165,57 +165,6 @@ Once data is imported into SQLite, you can:
 3. **Sync to other databases**: Use migrations or scripts to move processed data to production systems
 4. **Feed into ML/AI**: Use LinkedIn profile context for interview coaching, skill matching, or career recommendations
 
-Example usage in another .NET app:
-```csharp
-using (var context = new LinkedInContext())
-{
-    var connections = context.Connections
-        .Where(c => c.Company == "TargetCompany")
-        .ToList();
-}
-```
-
-## Troubleshooting
-
-### "CSV file not found"
-- Verify the extracted LinkedIn files are in the expected directory
-- Check file paths in your import service
-
-### "Database locked" error
-- Ensure no other process is accessing the SQLite database file
-- Close any open database connections in other applications
-
-### "Column mismatch" or "null reference" during import
-- LinkedIn's CSV format may vary depending on export date/account settings
-- Update model properties to match your export's column names
-- Check CSV headers against your entity model definitions
-
-### Import is slow
-- For large exports (10,000+ connections), this is normal
-- Consider implementing async/await for longer import operations
-- Increase batch size in bulk insert logic if database supports it
-
-## Future Enhancements
-
-- Async import operations for better responsiveness
-- Incremental updates (only import changes since last import)
-- Data validation UI/CLI prompts before committing to database
-- Export functionality (SQLite → CSV, Excel)
-- Integration with LinkedIn API (if you're comfortable with OAuth)
-
-## Contributing
-
-This project was built as part of a capstone project, but contributions and improvements are welcome:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes with clear messages
-4. Push to your fork and submit a pull request
-
-## License
-
-This project is provided as-is for educational purposes.
-
 ## Questions?
 
 If you have questions about the import process, data models, or integration patterns, feel free to open an Issue or reach out.
